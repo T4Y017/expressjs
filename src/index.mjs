@@ -10,7 +10,7 @@ import cookieParser from "cookie-parser";
 import FirmModal from "./models/FirmModal.js";
 const corsOptions = {
     origin: [
-        "https://sigun-staj-projem.up.railway.app/",
+        "https://sigun-staj-projem.up.railway.app",
         "http://localhost:5173",
         "http://localhost:5174",
         "http://localhost",
