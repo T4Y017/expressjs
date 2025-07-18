@@ -24,9 +24,8 @@ const userSchema = new mongoose.Schema(
             default: null,
         },
         permissions: {
-            edit: { type: Boolean, default: false },
-            delete: { type: Boolean, default: false },
-            addUser: { type: Boolean, default: false },
+            type: [String],
+            default: [],
         },
     },
     {

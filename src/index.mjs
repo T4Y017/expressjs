@@ -9,7 +9,13 @@ import bcrypt from "bcrypt";
 import cookieParser from "cookie-parser";
 import FirmModal from "./models/FirmModal.js";
 const corsOptions = {
-    origin: ["http://localhost:5173"],
+    origin: [
+        "https://sigun-staj-projem.up.railway.app/",
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://localhost",
+        "http://localhost:4000",
+    ],
     credentials: true,
 };
 
@@ -133,10 +139,7 @@ app.post("/api/users/:id", async (req, res) => {
             console.log("Kullanıcı bulunamadı:", id);
             return res.status(404).json({ msg: "User not found" });
         }
-        user.permissions = {
-            ...user.permissions,
-            ...permissions,
-        };
+        user.permissions = permissions;
         await user.save();
         res.json({ msg: "Permissions updated successfully" });
     } catch (error) {
@@ -376,5 +379,5 @@ app.listen(PORT, () => {
 });
 
 //localhost:3000
-// localhost:3000/users
+//localhost:3000/users
 //localhost:3000/firms
